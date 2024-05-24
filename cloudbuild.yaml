@@ -13,6 +13,8 @@ steps:
         'standup-backend',
         '--image',
         'gcr.io/$PROJECT_ID/standup-backend',
+        '--port',
+        '5000',
         '--region',
         'asia-southeast2',
         '--platform',
