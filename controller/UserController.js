@@ -57,12 +57,20 @@ export const loginhandler= async(req, res)=>{
         });
 
         if(user){
+            const userPayload = {
+                id: user.id,
+                nama: user.nama,
+                email: user.email,
+                notelp: user.notelp,
+                alamat: user.alamat,
+                username: user.username
+            };
             const decryptPassword = await bcrypt.compare(password, user.password);
             if(decryptPassword){
-                const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
+                const accessToken = jwt.sign(userPayload, process.env.ACCESS_TOKEN_SECRET, {
                     expiresIn : '30s' 
                 });
-                const authToken = jwt.sign(user, process.env.AUTH_TOKEN_SECRET, {
+                const authToken = jwt.sign(userPayload, process.env.AUTH_TOKEN_SECRET, {
                     expiresIn : '1d' 
                 });
                 await User.update({auth_token:authToken},{
