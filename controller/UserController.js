@@ -114,7 +114,7 @@ export const loginhandler= async(req, res)=>{
 export const logout = async(req,res)=>{
     const authToken = req.cookies.authToken;
     if(!authToken) return res.sendStatus(204);
-    const user = await User.findAll({
+    const user = await User.findOne({
         where:{
             auth_token:authToken
         }
