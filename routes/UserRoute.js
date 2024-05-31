@@ -41,7 +41,7 @@ router.post('/register', Register);
 router.get('/profile/:id',verifyToken, getUserById);
 router.put('/profile/update/:id',verifyToken, updateUser);
 router.delete('/profile/delete/:id',verifyToken, deleteUser);
-router.get('/logout', logout);
+router.delete('/logout', logout);
 
 //endpoint tabel show
 router.get('/show',verifyToken, getShow);
