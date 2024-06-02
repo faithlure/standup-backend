@@ -11,7 +11,8 @@ const Show = db.define('shows',{
     tanggal : Sequelize.DATEONLY,
     waktu :  Sequelize.TIME
 },{
-    freezeTableName : true
+    freezeTableName : true,
+    timestamps: false
 });
 
 

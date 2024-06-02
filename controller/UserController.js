@@ -68,7 +68,7 @@ export const loginhandler= async(req, res)=>{
             const decryptPassword = await bcrypt.compare(password, user.password);
             if(decryptPassword){
                 const accessToken = jwt.sign(userPayload, process.env.ACCESS_TOKEN_SECRET, {
-                    expiresIn : '30s' 
+                    expiresIn : '1d' 
                 });
                 const authToken = jwt.sign(userPayload, process.env.AUTH_TOKEN_SECRET, {
                     expiresIn : '1d' 
@@ -81,8 +81,9 @@ export const loginhandler= async(req, res)=>{
                 res.cookie('authToken', authToken,{
                     httpOnly : true,
                     maxAge  : 24*60*60*1000,
-                    secure: true
+                
                 });
+
                 res.status(200).json({
                     status: "Succes",
                     message: "Login Berhasil",
