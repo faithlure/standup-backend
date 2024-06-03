@@ -37,24 +37,24 @@ router.get('/token', authToken);
 //endpoint table user
 router.post('/login', loginhandler);
 router.post('/register', Register);
-router.get('/profile/:id', getUserById);
-router.put('/profile/update/:id', updateUser);
-router.delete('/profile/delete/:id', deleteUser);
+router.get('/profile/:id',verifyToken, getUserById);
+router.put('/profile/update/:id',verifyToken, updateUser);
+router.delete('/profile/delete/:id',verifyToken, deleteUser);
 router.delete('/logout', logout);
 
 //endpoint tabel show
-router.get('/show', getShow);
-router.post('/show/create', createShow);
-router.get('/show/:id', getShowById);
-router.put('/show/update/:id', updateShow);
-router.delete('/show/delete/:id', deleteShow);
+router.get('/show',verifyToken, getShow);
+router.post('/show/create',verifyToken, createShow);
+router.get('/show/:id',verifyToken, getShowById);
+router.put('/show/update/:id',verifyToken, updateShow);
+router.delete('/show/delete/:id',verifyToken, deleteShow);
 
 //endpoint tabel form_pembelian
-router.get('/formbeli/:id_user', getFormPembelian);
-router.post('/formbeli/create', createFormPembelian);
-router.get('/formbeli/detail/:id', getFormPembelianById);
-router.put('/formbeli/update/:id', updateFormPembelian);
-router.delete('/formbeli/delete/:id', deleteFormPembelian);
+router.get('/formbeli/:id_user',verifyToken, getFormPembelian);
+router.post('/formbeli/create',verifyToken, createFormPembelian);
+router.get('/formbeli/detail/:id',verifyToken, getFormPembelianById);
+router.put('/formbeli/update/:id',verifyToken, updateFormPembelian);
+router.delete('/formbeli/delete/:id',verifyToken, deleteFormPembelian);
 
 
 

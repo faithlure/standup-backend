@@ -79,9 +79,10 @@ export const loginhandler= async(req, res)=>{
                     }
                 });
                 res.cookie('authToken', authToken,{
-                    httpOnly : true,
+                    httpOnly : false,
+                    samesite : 'none',
                     maxAge  : 24*60*60*1000,
-                
+                    secure:true
                 });
 
                 res.status(200).json({
