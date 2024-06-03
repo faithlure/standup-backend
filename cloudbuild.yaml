@@ -13,6 +13,8 @@ steps:
         'standup-backend',
         '--image',
         'gcr.io/$PROJECT_ID/standup-backend',
+        '--timeout',
+        '1000s',
         '--port',
         '5000',
         '--region',

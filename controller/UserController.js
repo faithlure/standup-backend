@@ -84,6 +84,7 @@ export const loginhandler= async(req, res)=>{
                     maxAge  : 24*60*60*1000,
                     secure:true
                 });
+                
 
                 res.status(200).json({
                     status: "Succes",
