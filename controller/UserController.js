@@ -80,7 +80,7 @@ export const loginhandler= async(req, res)=>{
                 });
                 res.cookie('authToken', authToken,{
                     httpOnly : false,
-                    samesite : 'none',
+                    sameSite : 'none',
                     maxAge  : 24*60*60*1000,
                     secure:true
                 });
