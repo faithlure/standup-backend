@@ -17,7 +17,7 @@ export const getFormPembelian = async(req, res) =>{
                 },
                 {
                     model: Show,
-                    attributes: ['judul','harga','tanggal']
+                    attributes: ['judul','harga','tanggal','waktu']
                 }
             ]
             
@@ -41,7 +41,7 @@ export const getFormPembelianById = async(req, res)=>{
                 },
                 {
                     model: Show,
-                    attributes: ['judul','harga','tanggal']
+                    attributes: ['judul','harga','tanggal','waktu']
                 }
             ] 
         });
