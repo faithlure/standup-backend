@@ -46,6 +46,11 @@ export const updateShow = async(req, res) =>{
 
 export const deleteShow = async(req, res) =>{
     try{
+        await FormBeli.destroy({
+            where:{
+                id_user:req.params.id
+            }
+        });
         await Show.destroy({
             where:{
                 id: req.params.id
